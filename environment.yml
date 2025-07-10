@@ -1,0 +1,12 @@
+name: pose-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - matplotlib
+  - numpy
+  - pandas
+  - ipykernel
+  - plotly
+  - pip
