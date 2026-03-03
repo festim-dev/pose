@@ -1,0 +1,318 @@
+# ----------------------------------------
+# Reports snapshot
+# Account: FESTIM
+# Property: tutorials
+# ----------------------------------------
+#  
+# Start date: 20251203
+# End date: 20260302
+Active users,New users,Average engagement time per active user,Event count
+159,156,474.37106918238993,5404
+
+#  
+# Start date: 20251203
+# End date: 20260302
+Page title and screen class,Views,Active users,Event count,Bounce rate
+The FESTIM tutorial — FESTIM tutorial,476,108,1696,0.2715654952076677
+Simple simulation — FESTIM tutorial,189,64,509,0.2883435582822086
+TDS simulation — FESTIM tutorial,110,40,290,0.18556701030927836
+Basic functionality — FESTIM tutorial,82,22,231,0.34146341463414637
+DOLFINx meshes — FESTIM tutorial,58,20,149,0.18181818181818182
+Fitting a TDS spectrum — FESTIM tutorial,51,22,137,0.3333333333333333
+Simple permeation simulation — FESTIM tutorial,51,26,132,0.2558139534883721
+Mesh with GMSH — FESTIM tutorial,48,17,132,0.2
+Mesh with SALOME — FESTIM tutorial,44,19,143,0.3181818181818182
+Hydrogen diffusion along grain boundaries — FESTIM tutorial,38,24,115,0.35714285714285715
+Permeation regimes — FESTIM tutorial,38,15,90,0.3611111111111111
+Monoblock — FESTIM tutorial,37,13,109,0.325
+CAD integration — FESTIM tutorial,35,19,74,0.1875
+FESTIM meshes — FESTIM tutorial,35,15,82,0.18181818181818182
+Search - FESTIM tutorial,35,6,141,0.1111111111111111
+Reactions — FESTIM tutorial,32,10,81,0.0967741935483871
+Advanced functionality — FESTIM tutorial,30,12,84,0.23333333333333334
+Advection-diffusion problem — FESTIM tutorial,29,13,77,0.14814814814814814
+Chemical species — FESTIM tutorial,29,17,74,0.2222222222222222
+Heat transfer simulations — FESTIM tutorial,29,13,75,0.16
+Permeation barrier modelling — FESTIM tutorial,29,16,75,0.06896551724137931
+Surface reactions — FESTIM tutorial,18,12,51,0.06666666666666667
+Using the HTM database — FESTIM tutorial,18,8,44,0.2222222222222222
+Choosing the appropriate exports for post-processing — FESTIM tutorial,17,8,40,0
+Build FESTIM from scratch — FESTIM tutorial,16,5,58,0.35
+Exporting derived quantities — FESTIM tutorial,15,5,42,0.25
+Integration with HTM — FESTIM tutorial,14,9,42,0.3125
+Using PyVista for interactive visualization — FESTIM tutorial,14,10,38,0.14285714285714285
+Description — FESTIM tutorial,12,7,30,0.21428571428571427
+Hydrogen transport: advanced — FESTIM tutorial,11,5,32,0.16666666666666666
+Radioactive decay ☢️ — FESTIM tutorial,11,8,28,0.08333333333333333
+Visualizing fields in ParaView — FESTIM tutorial,11,7,30,0.2222222222222222
+Coupling to computational fluid dynamics — FESTIM tutorial,10,3,29,0.375
+Derived quantities — FESTIM tutorial,10,5,24,0.125
+Stepsize — FESTIM tutorial,9,3,19,0
+Hydrogen transport: basic — FESTIM tutorial,8,6,22,0.1111111111111111
+Hydrogen transport: examples — FESTIM tutorial,8,5,19,0.1111111111111111
+Visualisation and post-processing — FESTIM tutorial,8,6,21,0
+Exporting fields to VTX — FESTIM tutorial,7,4,20,0
+Kinetic surface model — FESTIM tutorial,7,7,21,0.2
+Settings — FESTIM tutorial,7,3,17,0
+Concentration — FESTIM tutorial,6,4,14,0
+Damaged induced traps — FESTIM tutorial,6,5,17,0.3333333333333333
+Fixed value and flux boundary condition mathematics — FESTIM tutorial,6,5,18,0
+Modelling discontinuous trapped concentration profiles — FESTIM tutorial,6,5,14,0.16666666666666666
+Solution — FESTIM tutorial,6,4,16,0.2857142857142857
+Exporting fields — FESTIM tutorial,5,4,15,0.2
+Advanced examples — FESTIM tutorial,4,2,10,0
+Challenge C: Evaluate the hydrogen surface flux from a EUROFER pipe — FESTIM tutorial,4,4,13,0
+Coupling to neutronics — FESTIM tutorial,4,2,10,0
+Soret effect — FESTIM tutorial,4,4,11,0
+Challenge A: Evaluate the PRF of an alumina coating on Eurofer — FESTIM tutorial,3,3,9,0
+Challenge E: compute the extraction efficiency of a PAV extractor — FESTIM tutorial,3,1,9,0
+Temperature — FESTIM tutorial,3,1,8,0
+带SALOME的网格 — FESTIM教程,3,2,28,0
+Boundary condition: Particle fluxes — FESTIM tutorial,2,2,6,0
+Challenge D: Evaluate the hydrogen inventory within a complex structure — FESTIM tutorial,2,2,6,0
+Heat transfer — FESTIM tutorial,2,2,6,0.3333333333333333
+Meshes — FESTIM tutorial,2,2,5,0.5
+Steady state problem — FESTIM tutorial,2,2,6,0.3333333333333333
+Transient problem — FESTIM tutorial,2,2,5,0.5
+Write custom classes — FESTIM tutorial,2,2,4,0
+单色块 — FESTIM 教程,2,2,7,0
+Boundary conditions — FESTIM tutorial,1,1,2,1
+Challenge B: Fit an experimental TDS spectrum — FESTIM tutorial,1,1,3,0
+Initial conditions — FESTIM tutorial,1,1,3,0
+Non-cartesian meshes — FESTIM tutorial,1,1,2,0
+Post processing — FESTIM tutorial,1,1,2,0
+Troubleshooting — FESTIM tutorial,1,1,2,0
+简单渗透模拟——FESTIM教程,1,1,4,0
+Backgrounc — FESTIM tutorial,0,2,3,1
+CAD集成 — FESTIM教程,0,1,6,0.25
+DOLFINx 网格 — FESTIM 教程,0,1,2,0
+FESTIM チュートリアル — FESTIM チュートリアル,0,1,1,0
+FESTIM 教程 — FESTIM 教程,0,1,4,0
+FESTIM 网格 — FESTIM 教程,0,2,3,0
+与HTM集成——FESTIM教程,0,1,1,0
+拟合TDS频谱——FESTIM教程,0,1,1,0
+渗透状态 — FESTIM 教程,0,1,1,0
+热传递模拟 — FESTIM 教程,0,1,3,0
+简单仿真 — FESTIM 教程,0,1,1,0
+
+#  
+# Start date: 20251203
+# End date: 20260302
+First user source / medium,Active users
+(direct) / (none),145
+bing / organic,4
+google / organic,4
+statics.teams.cdn.office.net / referral,3
+festim.discourse.group / referral,2
+yahoo / organic,1
+
+#  
+# Start date: 20251203
+# End date: 20260302
+Session source/medium,Sessions
+(direct) / (none),566
+google / organic,54
+bing / organic,18
+festim.discourse.group / referral,6
+duckduckgo / organic,4
+statics.teams.cdn.office.net / referral,4
+github.com / referral,2
+yahoo / organic,1
+
+#  
+# Start date: 20251203
+# End date: 20260302
+Nth day,returning,new
+0000,0,0
+0001,0,0
+0002,0,0
+0003,0,0
+0004,0,0
+0005,0,0
+0006,0,0
+0007,0,0
+0008,0,0
+0009,0,0
+0010,0,0
+0011,0,0
+0012,0,0
+0013,0,0
+0014,0,0
+0015,0,0
+0016,0,0
+0017,0,0
+0018,0,0
+0019,0,0
+0020,0,0
+0021,0,0
+0022,0,0
+0023,0,0
+0024,0,0
+0025,0,0
+0026,0,0
+0027,0,0
+0028,0,0
+0029,0,0
+0030,0,0
+0031,0,0
+0032,0,0
+0033,0,0
+0034,0,0
+0035,0,0
+0036,0,0
+0037,0,0
+0038,0,0
+0039,0,0
+0040,0,0
+0041,0,0
+0042,0,0
+0043,0,0
+0044,0,0
+0045,0,0
+0046,0,0
+0047,0,0
+0048,0,0
+0049,0,0
+0050,0,0
+0051,0,3
+0052,2,8
+0053,0,0
+0054,4,4
+0055,5,6
+0056,7,12
+0057,6,3
+0058,5,13
+0059,1,0
+0060,2,0
+0061,11,4
+0062,5,6
+0063,5,4
+0064,10,9
+0065,6,7
+0066,3,3
+0067,0,2
+0068,10,9
+0069,7,7
+0070,11,6
+0071,10,6
+0072,10,9
+0073,0,3
+0074,1,2
+0075,1,1
+0076,11,7
+0077,5,0
+0078,6,3
+0079,5,3
+0080,1,0
+0081,1,1
+0082,5,0
+0083,9,4
+0084,10,3
+0085,12,6
+0086,14,2
+0087,2,0
+0088,2,1
+0089,9,0
+
+# How does activity on your platforms compare?
+# Start date: 20251203
+# End date: 20260302
+Platform,Key events
+
+
+#  
+# Start date: 20251203
+# End date: 20260302
+Town/City,Active users
+Cambridge,22
+Cardiff,8
+Boston,7
+London,7
+Ashburn,5
+Manchester,5
+Chicago,4
+Brussels,3
+Kyoto,3
+Oslo Municipality,3
+Somerville,3
+Amsterdam,2
+Bristol,2
+Catskill,2
+College Station,2
+Framingham,2
+Los Angeles,2
+Metter,2
+Milan,2
+Moscow,2
+Munich,2
+North Augusta,2
+Oxford,2
+Paris,2
+San Diego,2
+Shizuoka,2
+Tehran,2
+Turin,2
+Albuquerque,1
+Bangor,1
+Barranquilla,1
+Bath,1
+Beijing,1
+Bothell,1
+Breda,1
+Brighton,1
+Buena Vista,1
+Burlington,1
+Canajoharie,1
+Chennai,1
+Dallas,1
+Des Moines,1
+Didcot,1
+Everett,1
+Eynsham,1
+Fitchburg,1
+Fort Gregg-Adams,1
+Fort Wayne,1
+Garching,1
+Gradignan,1
+Grand Ledge,1
+Guangzhou,1
+Hendersonville,1
+Inglis,1
+Jakobsberg,1
+Julich,1
+Kansas City,1
+Knoxville,1
+Livermore,1
+Livorno,1
+Madison,1
+Madrid,1
+Magee,1
+Manila,1
+Montreal,1
+Moses Lake,1
+Naperville,1
+New Haven,1
+New York,1
+North Bergen,1
+North Charleston,1
+Philadelphia,1
+Pistoia,1
+Reston,1
+Seattle,1
+Stratford-upon-Avon,1
+Swanzey,1
+Tewkesbury,1
+Thatcham,1
+Three Rivers,1
+Tirana,1
+Tokai,1
+Toki,1
+Vetralla,1
+Vitoria-Gasteiz,1
+West Point,1
+
+#  
+# Start date: 20251203
+# End date: 20260302
+Audience name,Active users
+All Users,159
