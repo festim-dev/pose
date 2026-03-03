@@ -11,3 +11,8 @@ dependencies:
   - plotly
   - pip
   - requests
+  - geopandas
+  - pip:
+    - morthemes
+    - cartopy
+    - geopy
