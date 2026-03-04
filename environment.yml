@@ -12,7 +12,8 @@ dependencies:
   - pip
   - requests
   - geopandas
+  - geopy
   - pip:
-    - morthemes
+    - morethemes
     - cartopy
-    - geopy
+    - google-analytics-data
