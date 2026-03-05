@@ -13,6 +13,7 @@ dependencies:
   - requests
   - geopandas
   - geopy
+  - python-dotenv
   - pip:
     - morethemes
     - cartopy
