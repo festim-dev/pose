@@ -41,8 +41,10 @@ def get_citing_dates(doi):
         citing.extend(data["results"])
         cursor = data["meta"]["next_cursor"]
     surname = work["authorships"][0]["author"]["display_name"].split()[-1]
-    journal = JOURNAL_ABBR.get(work["primary_location"]["source"]["display_name"],
-                               work["primary_location"]["source"]["display_name"])
+    journal = JOURNAL_ABBR.get(
+        work["primary_location"]["source"]["display_name"],
+        work["primary_location"]["source"]["display_name"],
+    )
     pub_date = datetime.strptime(work["publication_date"], "%Y-%m-%d")
     label = f"{surname}, {journal}, {pub_date.year}"
     dates = sorted(datetime.strptime(p["publication_date"], "%Y-%m-%d") for p in citing)
@@ -66,14 +68,39 @@ def plot_cumulative_citations(dois):
         counts = np.array([sum(1 for d in dates if d <= t) for t in all_dates])
         top = bottom + counts
         c = colors[i % len(colors)]
-        ax.fill_between(all_dates, bottom, top, step="post", alpha=0.7, color=c, label=label)
-        ax.step(all_dates, top, where="post", linewidth=1, color=c)
-        bottom = top
 
-    ax.set(xlabel="Date", ylabel="Cumulative citations", title="Cumulative citations over time")
+        ax.fill_between(
+            all_dates,
+            bottom,
+            top,
+            step="post",
+            alpha=0.7,
+            color=c,
+            label=label,
+            edgecolor="none",
+        )
+        bottom = top
+    ax.step(all_dates, top, where="post", linewidth=2, color="C1")
+
+    ax.scatter(all_dates[-1], top[-1], color="C1", edgecolor="black", zorder=5, s=40)
+
+    ax.annotate(
+        f"{top[-1]:.0f} citations",
+        xy=(all_dates[-1], top[-1]),
+        xytext=(5, 5),
+        textcoords="offset points",
+        fontsize=8,
+        fontweight="bold",
+    )
+
+    ax.set(
+        xlabel="Date",
+        ylabel="Cumulative citations",
+        title="Cumulative citations over time",
+    )
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     ax.xaxis.set_major_locator(mdates.YearLocator())
-    ax.legend(fontsize=7)
+    ax.legend(fontsize=7, reverse=True)
     plt.tight_layout()
     plt.savefig("cumulative_citations.png", dpi=150, bbox_inches="tight")
     plt.show()
