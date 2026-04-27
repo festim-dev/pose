@@ -26,7 +26,7 @@ def find_locations_from_cache(df, filename: str, update_cache=True):
         if locs_not_found
         else locations_found
     )
-    
+
     # ensure locations matches the order of df and avoid dtype mismatch errors
     merge_df = df[["city"]].copy()
     merge_df["city"] = merge_df["city"].astype(str)
