@@ -3,12 +3,10 @@ from collections import defaultdict
 from datetime import datetime
 import os
 import time
+import dotenv
 
-try:
-    TOKEN = os.environ["GITHUB_TOKEN"]
-except KeyError:
-    print("GITHUB_TOKEN not found in environment variables.")
-    TOKEN = None
+dotenv.load_dotenv()
+TOKEN = os.getenv("GITHUB_TOKEN")
 
 
 def fetch_contributor_stats(owner: str, repo: str):
@@ -19,7 +17,10 @@ def fetch_contributor_stats(owner: str, repo: str):
     }
     if TOKEN:
         headers["Authorization"] = f"Bearer {TOKEN}"
-
+    else:
+        print(
+            "⚠️  No GITHUB_TOKEN found in environment variables. You may hit rate limits."
+        )
     # Poll until we get a 200 OK
     MAX_RETRIES = 10
     for attempt in range(MAX_RETRIES):
