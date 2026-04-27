@@ -471,6 +471,18 @@
 { "type": "Feature", "properties": { "city": "Norway", "address": "Norway, Iowa, United States" }, "geometry": { "type": "Point", "coordinates": [ -91.9215691, 41.9027805 ] } },
 { "type": "Feature", "properties": { "city": "Denmark", "address": "Denmark, 04022, Maine, United States" }, "geometry": { "type": "Point", "coordinates": [ -70.8035298, 43.9707277 ] } },
 { "type": "Feature", "properties": { "city": "Sweden", "address": "Sverige, Sverige" }, "geometry": { "type": "Point", "coordinates": [ 14.5208584, 59.6749712 ] } },
-{ "type": "Feature", "properties": { "city": "Batavia", "address": "Batavia, 14020, New York, United States" }, "geometry": { "type": "Point", "coordinates": [ -78.1875515, 42.9980144 ] } }
+{ "type": "Feature", "properties": { "city": "Batavia", "address": "Batavia, 14020, New York, United States" }, "geometry": { "type": "Point", "coordinates": [ -78.1875515, 42.9980144 ] } },
+{ "type": "Feature", "properties": { "city": "Nantes", "address": "Nantes, 44000;44100;44200;44300, Pays de la Loire, France" }, "geometry": { "type": "Point", "coordinates": [ -1.5541362, 47.2186371 ] } },
+{ "type": "Feature", "properties": { "city": "Edgware", "address": "Edgware, HA8 8LR, London, England, United Kingdom" }, "geometry": { "type": "Point", "coordinates": [ -0.276739, 51.6176443 ] } },
+{ "type": "Feature", "properties": { "city": "Wallingford", "address": "Wallingford, 06492, Connecticut, United States" }, "geometry": { "type": "Point", "coordinates": [ -72.8239356, 41.4564233 ] } },
+{ "type": "Feature", "properties": { "city": "Beverungen", "address": "Beverungen, 37688, Nordrhein-Westfalen, Deutschland" }, "geometry": { "type": "Point", "coordinates": [ 9.3759072, 51.6676535 ] } },
+{ "type": "Feature", "properties": { "city": "Eastland", "address": "Eastland, Texas, United States" }, "geometry": { "type": "Point", "coordinates": [ -98.8630896, 32.2978594 ] } },
+{ "type": "Feature", "properties": { "city": "Clifton", "address": "Clifton, New Jersey, United States" }, "geometry": { "type": "Point", "coordinates": [ -74.1637553, 40.8584328 ] } },
+{ "type": "Feature", "properties": { "city": "Great Yarmouth", "address": "Great Yarmouth, NR30 2AH, Great Yarmouth, England, United Kingdom" }, "geometry": { "type": "Point", "coordinates": [ 1.7314845, 52.6071742 ] } },
+{ "type": "Feature", "properties": { "city": "Corfu", "address": "Corfu, Pembroke, New York, United States" }, "geometry": { "type": "Point", "coordinates": [ -78.4055767, 42.9600595 ] } },
+{ "type": "Feature", "properties": { "city": "Poing", "address": "Poing, 85586, Bayern, Deutschland" }, "geometry": { "type": "Point", "coordinates": [ 11.803713, 48.1667467 ] } },
+{ "type": "Feature", "properties": { "city": "Gretna", "address": "Gretna, 70053, Louisiana, United States" }, "geometry": { "type": "Point", "coordinates": [ -90.0539604, 29.9146493 ] } },
+{ "type": "Feature", "properties": { "city": "Appleton", "address": "Appleton, Wisconsin, United States" }, "geometry": { "type": "Point", "coordinates": [ -88.4069744, 44.2613967 ] } },
+{ "type": "Feature", "properties": { "city": "Otaru", "address": "小樽市, 北海道, 日本" }, "geometry": { "type": "Point", "coordinates": [ 140.9946021, 43.1906806 ] } }
 ]
 }
