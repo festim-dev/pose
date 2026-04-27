@@ -26,6 +26,13 @@ def find_locations_from_cache(df, filename: str, update_cache=True):
         if locs_not_found
         else locations_found
     )
+    
+    # ensure locations matches the order of df and avoid dtype mismatch errors
+    merge_df = df[["city"]].copy()
+    merge_df["city"] = merge_df["city"].astype(str)
+    locations["city"] = locations["city"].astype(str)
+    locations = merge_df.merge(locations, on="city", how="left")
+    locations = gpd.GeoDataFrame(locations, geometry="geometry")
 
     if update_cache and locs_not_found:
         # make sure to keep the same order as the original df

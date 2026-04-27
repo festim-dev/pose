@@ -453,6 +453,24 @@
 { "type": "Feature", "properties": { "city": "North Charleston", "address": "North Charleston, South Carolina, United States" }, "geometry": { "type": "Point", "coordinates": [ -79.9748103, 32.8546197 ] } },
 { "type": "Feature", "properties": { "city": "Breda", "address": "Breda, Noord-Brabant, Nederland" }, "geometry": { "type": "Point", "coordinates": [ 4.7760237, 51.5887845 ] } },
 { "type": "Feature", "properties": { "city": "Tewkesbury", "address": "Tewkesbury, Tewkesbury, England, United Kingdom" }, "geometry": { "type": "Point", "coordinates": [ -2.1549574, 51.9937857 ] } },
-{ "type": "Feature", "properties": { "city": "Blagnac", "address": "Blagnac, 31700, Occitanie, France" }, "geometry": { "type": "Point", "coordinates": [ 1.3986403, 43.6343476 ] } }
+{ "type": "Feature", "properties": { "city": "Blagnac", "address": "Blagnac, 31700, Occitanie, France" }, "geometry": { "type": "Point", "coordinates": [ 1.3986403, 43.6343476 ] } },
+{ "type": "Feature", "properties": { "city": "United States", "address": "United States, United States" }, "geometry": { "type": "Point", "coordinates": [ -100.445882, 39.7837304 ] } },
+{ "type": "Feature", "properties": { "city": "Italy", "address": "Italy, 76651, Texas, United States" }, "geometry": { "type": "Point", "coordinates": [ -96.8847194, 32.1840381 ] } },
+{ "type": "Feature", "properties": { "city": "United Kingdom", "address": "United Kingdom, United Kingdom" }, "geometry": { "type": "Point", "coordinates": [ -3.2765753, 54.7023545 ] } },
+{ "type": "Feature", "properties": { "city": "Serbia", "address": "Србија, Србија" }, "geometry": { "type": "Point", "coordinates": [ 20.55144, 44.1534121 ] } },
+{ "type": "Feature", "properties": { "city": "Germany", "address": "Deutschland, Deutschland" }, "geometry": { "type": "Point", "coordinates": [ 10.4478313, 51.1638175 ] } },
+{ "type": "Feature", "properties": { "city": "Canada", "address": "Canada, Canada" }, "geometry": { "type": "Point", "coordinates": [ -107.991707, 61.0666922 ] } },
+{ "type": "Feature", "properties": { "city": "China", "address": "中国, 中国" }, "geometry": { "type": "Point", "coordinates": [ 104.999927, 35.000074 ] } },
+{ "type": "Feature", "properties": { "city": "Iran", "address": "ایران, ایران" }, "geometry": { "type": "Point", "coordinates": [ 54.5643516, 32.6475314 ] } },
+{ "type": "Feature", "properties": { "city": "Spain", "address": "España, España" }, "geometry": { "type": "Point", "coordinates": [ -4.8379791, 39.3260685 ] } },
+{ "type": "Feature", "properties": { "city": "Japan", "address": "日本, 日本" }, "geometry": { "type": "Point", "coordinates": [ 139.2394179, 36.5748441 ] } },
+{ "type": "Feature", "properties": { "city": "France", "address": "France, France" }, "geometry": { "type": "Point", "coordinates": [ 1.8883335, 46.603354 ] } },
+{ "type": "Feature", "properties": { "city": "India", "address": "भारत, India" }, "geometry": { "type": "Point", "coordinates": [ 78.6677428, 22.3511148 ] } },
+{ "type": "Feature", "properties": { "city": "Belgium", "address": "België / Belgique / Belgien, België / Belgique / Belgien" }, "geometry": { "type": "Point", "coordinates": [ 4.6667145, 50.6402809 ] } },
+{ "type": "Feature", "properties": { "city": "Luxembourg", "address": "Luxembourg, Lëtzebuerg" }, "geometry": { "type": "Point", "coordinates": [ 6.129799, 49.6112768 ] } },
+{ "type": "Feature", "properties": { "city": "Norway", "address": "Norway, Iowa, United States" }, "geometry": { "type": "Point", "coordinates": [ -91.9215691, 41.9027805 ] } },
+{ "type": "Feature", "properties": { "city": "Denmark", "address": "Denmark, 04022, Maine, United States" }, "geometry": { "type": "Point", "coordinates": [ -70.8035298, 43.9707277 ] } },
+{ "type": "Feature", "properties": { "city": "Sweden", "address": "Sverige, Sverige" }, "geometry": { "type": "Point", "coordinates": [ 14.5208584, 59.6749712 ] } },
+{ "type": "Feature", "properties": { "city": "Batavia", "address": "Batavia, 14020, New York, United States" }, "geometry": { "type": "Point", "coordinates": [ -78.1875515, 42.9980144 ] } }
 ]
 }
