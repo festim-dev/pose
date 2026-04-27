@@ -27,64 +27,27 @@ BOT_CITIES = [
 ]
 
 
-def users_city(start_date_ga, end_date_ga, property_id="YOUR-GA4-PROPERTY-ID"):
-    client = BetaAnalyticsDataClient()
-    request = RunReportRequest(
-        property=f"properties/{property_id}",
-        dimensions=[Dimension(name="city")],
-        metrics=[Metric(name="activeUsers")],
-        date_ranges=[
-            DateRange(
-                start_date=start_date_ga.strftime("%Y-%m-%d"),
-                end_date=end_date_ga.strftime("%Y-%m-%d"),
-            )
-        ],
-        dimension_filter=FilterExpression(
-            not_expression=FilterExpression(
-                filter=Filter(
-                    field_name="city",
-                    in_list_filter=Filter.InListFilter(values=BOT_CITIES),
-                )
-            ),
-        ),
-    )
-    response = client.run_report(request)
-    return response
-
-
-def users_world(start_date_ga, end_date_ga, property_id="YOUR-GA4-PROPERTY-ID"):
-    client = BetaAnalyticsDataClient()
-    request = RunReportRequest(
-        property=f"properties/{property_id}",
-        dimensions=[Dimension(name="country")],
-        metrics=[Metric(name="activeUsers"), Metric(name="newUsers")],
-        date_ranges=[
-            DateRange(
-                start_date=start_date_ga.strftime("%Y-%m-%d"),
-                end_date=end_date_ga.strftime("%Y-%m-%d"),
-            )
-        ],
-        dimension_filter=FilterExpression(
-            not_expression=FilterExpression(
-                filter=Filter(
-                    field_name="city",
-                    in_list_filter=Filter.InListFilter(values=BOT_CITIES),
-                )
-            ),
-        ),
-    )
-    response = client.run_report(request)
-    return response
-
-
-def engagement_time_per_active_user(
-    start_date_ga, end_date_ga, property_id="YOUR-GA4-PROPERTY-ID"
+def run_report(
+    start_date_ga, end_date_ga, property_id="YOUR-GA4-PROPERTY-ID", daily=False
 ):
     client = BetaAnalyticsDataClient()
+
+    dimensions = [Dimension(name="date")] if daily else []
+    dimensions += [
+        Dimension(name="city"),
+        Dimension(name="country"),
+    ]
+
     request = RunReportRequest(
         property=f"properties/{property_id}",
-        dimensions=[Dimension(name="city")],
-        metrics=[Metric(name="userEngagementDuration"), Metric(name="activeUsers")],
+        dimensions=dimensions,
+        metrics=[
+            Metric(name="activeUsers"),
+            Metric(name="newUsers"),
+            Metric(name="sessions"),
+            Metric(name="engagementRate"),
+            Metric(name="userEngagementDuration"),
+        ],
         date_ranges=[
             DateRange(
                 start_date=start_date_ga.strftime("%Y-%m-%d"),
