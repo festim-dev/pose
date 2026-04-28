@@ -3,3 +3,4 @@ author: FESTIM Community
 logo: ""
 execute:
   execute_notebooks: force
+  allow_errors: true
