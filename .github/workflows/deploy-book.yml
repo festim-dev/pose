@@ -36,6 +36,11 @@ jobs:
         activate-environment: pose-env
         auto-activate-base: false
 
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v2
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
     - name: Build the book
       shell: bash -el {0}
       env:
