@@ -1,0 +1,39 @@
+name: deploy-book
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at midnight
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Miniconda
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        environment-file: environment.yml
+        activate-environment: pose-env
+        auto-activate-base: false
+
+    - name: Build the book
+      shell: bash -el {0}
+      env:
+        # Pass necessary secrets here
+        DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+      run: |
+        jupyter-book build .
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
