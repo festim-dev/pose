@@ -1,0 +1,139 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/share/miniconda/envs/pose-env/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+start_date_ga = datetime(2026, 1, 14)
+end_date_ga = datetime.today()
+FESTIM_DOCS_ID = "521295665"
+FESTIM_TUTO_ID = "521287230"
+
+response = run_report(start_date_ga, end_date_ga, FESTIM_DOCS_ID)
+# Convert response to a full dataframe
+data_docs = []
+for row in response.rows:
+    dim_vals = [d.value for d in row.dimension_values]
+    met_vals = [float(m.value) for m in row.metric_values]
+    data_docs.append(dim_vals + met_vals)
+df_users = pd.DataFrame(data_docs, columns=["city", "country", "activeUsers", "newUsers", "sessions", "engagementRate", "userEngagementDuration"])
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mDefaultCredentialsError[39m                   Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 6[39m
+[32m      2[39m end_date_ga = datetime.today()
+[32m      3[39m FESTIM_DOCS_ID = [33m"521295665"[39m
+[32m      4[39m FESTIM_TUTO_ID = [33m"521287230"[39m
+[32m      5[39m 
+[32m----> [39m[32m6[39m response = run_report(start_date_ga, end_date_ga, FESTIM_DOCS_ID)
+[32m      7[39m [38;5;66;03m# Convert response to a full dataframe[39;00m
+[32m      8[39m data_docs = []
+[32m      9[39m [38;5;28;01mfor[39;00m row [38;5;28;01min[39;00m response.rows:
+
+[36mFile [39m[32m~/work/pose/pose/src/data_fetching/google_analytics.py:33[39m, in [36mrun_report[39m[34m(start_date_ga, end_date_ga, property_id, daily)[39m
+[32m     30[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mrun_report[39m(
+[32m     31[39m     start_date_ga, end_date_ga, property_id=[33m"[39m[33mYOUR-GA4-PROPERTY-ID[39m[33m"[39m, daily=[38;5;28;01mFalse[39;00m
+[32m     32[39m ):
+[32m---> [39m[32m33[39m     client = [30;43mBetaAnalyticsDataClient[39;49m[30;43m([39;49m[30;43m)[39;49m
+[32m     35[39m     dimensions = [Dimension(name=[33m"[39m[33mdate[39m[33m"[39m)] [38;5;28;01mif[39;00m daily [38;5;28;01melse[39;00m []
+[32m     36[39m     dimensions += [
+[32m     37[39m         Dimension(name=[33m"[39m[33mcity[39m[33m"[39m),
+[32m     38[39m         Dimension(name=[33m"[39m[33mcountry[39m[33m"[39m),
+[32m     39[39m     ]
+
+[36mFile [39m[32m/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/google/analytics/data_v1beta/services/beta_analytics_data/client.py:718[39m, in [36mBetaAnalyticsDataClient.__init__[39m[34m(self, credentials, transport, client_options, client_info)[39m
+[32m    709[39m     transport_init: Union[
+[32m    710[39m         Type[BetaAnalyticsDataTransport],
+[32m    711[39m         Callable[..., BetaAnalyticsDataTransport],
+[32m   (...)[39m[32m    715[39m         [38;5;28;01melse[39;00m cast(Callable[..., BetaAnalyticsDataTransport], transport)
+[32m    716[39m     )
+[32m    717[39m     [38;5;66;03m# initialize with the provided callable or the passed in class[39;00m
+[32m--> [39m[32m718[39m     [38;5;28mself[39m._transport = [30;43mtransport_init[39;49m[30;43m([39;49m
+[32m    719[39m [30;43m        [39;49m[30;43mcredentials[39;49m[30;43m=[39;49m[30;43mcredentials[39;49m[30;43m,[39;49m
+[32m    720[39m [30;43m        [39;49m[30;43mcredentials_file[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43m_client_options[39;49m[30;43m.[39;49m[30;43mcredentials_file[39;49m[30;43m,[39;49m
+[32m    721[39m [30;43m        [39;49m[30;43mhost[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43m_api_endpoint[39;49m[30;43m,[39;49m
+[32m    722[39m [30;43m        [39;49m[30;43mscopes[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43m_client_options[39;49m[30;43m.[39;49m[30;43mscopes[39;49m[30;43m,[39;49m
+[32m    723[39m [30;43m        [39;49m[30;43mclient_cert_source_for_mtls[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43m_client_cert_source[39;49m[30;43m,[39;49m
+[32m    724[39m [30;43m        [39;49m[30;43mquota_project_id[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43m_client_options[39;49m[30;43m.[39;49m[30;43mquota_project_id[39;49m[30;43m,[39;49m
+[32m    725[39m [30;43m        [39;49m[30;43mclient_info[39;49m[30;43m=[39;49m[30;43mclient_info[39;49m[30;43m,[39;49m
+[32m    726[39m [30;43m        [39;49m[30;43malways_use_jwt_access[39;49m[30;43m=[39;49m[30;43;01mTrue[39;49;00m[30;43m,[39;49m
+[32m    727[39m [30;43m        [39;49m[30;43mapi_audience[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43m_client_options[39;49m[30;43m.[39;49m[30;43mapi_audience[39;49m[30;43m,[39;49m
+[32m    728[39m [30;43m    [39;49m[30;43m)[39;49m
+[32m    730[39m [38;5;28;01mif[39;00m [33m"[39m[33masync[39m[33m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m [38;5;28mstr[39m([38;5;28mself[39m._transport):
+[32m    731[39m     [38;5;28;01mif[39;00m CLIENT_LOGGING_SUPPORTED [38;5;129;01mand[39;00m _LOGGER.isEnabledFor(
+[32m    732[39m         std_logging.DEBUG
+[32m    733[39m     ):  [38;5;66;03m# pragma: NO COVER[39;00m
+
+[36mFile [39m[32m/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/google/analytics/data_v1beta/services/beta_analytics_data/transports/grpc.py:239[39m, in [36mBetaAnalyticsDataGrpcTransport.__init__[39m[34m(self, host, credentials, credentials_file, scopes, channel, api_mtls_endpoint, client_cert_source, ssl_channel_credentials, client_cert_source_for_mtls, quota_project_id, client_info, always_use_jwt_access, api_audience)[39m
+[32m    234[39m             [38;5;28mself[39m._ssl_channel_credentials = grpc.ssl_channel_credentials(
+[32m    235[39m                 certificate_chain=cert, private_key=key
+[32m    236[39m             )
+[32m    238[39m [38;5;66;03m# The base transport sets the host, credentials and scopes[39;00m
+[32m--> [39m[32m239[39m [30;43msuper[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43m__init__[39;49m[30;43m([39;49m
+[32m    240[39m [30;43m    [39;49m[30;43mhost[39;49m[30;43m=[39;49m[30;43mhost[39;49m[30;43m,[39;49m
+[32m    241[39m [30;43m    [39;49m[30;43mcredentials[39;49m[30;43m=[39;49m[30;43mcredentials[39;49m[30;43m,[39;49m
+[32m    242[39m [30;43m    [39;49m[30;43mcredentials_file[39;49m[30;43m=[39;49m[30;43mcredentials_file[39;49m[30;43m,[39;49m
+[32m    243[39m [30;43m    [39;49m[30;43mscopes[39;49m[30;43m=[39;49m[30;43mscopes[39;49m[30;43m,[39;49m
+[32m    244[39m [30;43m    [39;49m[30;43mquota_project_id[39;49m[30;43m=[39;49m[30;43mquota_project_id[39;49m[30;43m,[39;49m
+[32m    245[39m [30;43m    [39;49m[30;43mclient_info[39;49m[30;43m=[39;49m[30;43mclient_info[39;49m[30;43m,[39;49m
+[32m    246[39m [30;43m    [39;49m[30;43malways_use_jwt_access[39;49m[30;43m=[39;49m[30;43malways_use_jwt_access[39;49m[30;43m,[39;49m
+[32m    247[39m [30;43m    [39;49m[30;43mapi_audience[39;49m[30;43m=[39;49m[30;43mapi_audience[39;49m[30;43m,[39;49m
+[32m    248[39m [30;43m[39;49m[30;43m)[39;49m
+[32m    250[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._grpc_channel:
+[32m    251[39m     [38;5;66;03m# initialize with the provided callable or the default channel[39;00m
+[32m    252[39m     channel_init = channel [38;5;129;01mor[39;00m [38;5;28mtype[39m([38;5;28mself[39m).create_channel
+
+[36mFile [39m[32m/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/google/analytics/data_v1beta/services/beta_analytics_data/transports/base.py:113[39m, in [36mBetaAnalyticsDataTransport.__init__[39m[34m(self, host, credentials, credentials_file, scopes, quota_project_id, client_info, always_use_jwt_access, api_audience, **kwargs)[39m
+[32m    106[39m     credentials, _ = google.auth.load_credentials_from_file(
+[32m    107[39m         credentials_file,
+[32m    108[39m         scopes=scopes,
+[32m    109[39m         quota_project_id=quota_project_id,
+[32m    110[39m         default_scopes=[38;5;28mself[39m.AUTH_SCOPES,
+[32m    111[39m     )
+[32m    112[39m [38;5;28;01melif[39;00m credentials [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._ignore_credentials:
+[32m--> [39m[32m113[39m     credentials, _ = [30;43mgoogle[39;49m[30;43m.[39;49m[30;43mauth[39;49m[30;43m.[39;49m[30;43mdefault[39;49m[30;43m([39;49m
+[32m    114[39m [30;43m        [39;49m[30;43mscopes[39;49m[30;43m=[39;49m[30;43mscopes[39;49m[30;43m,[39;49m
+[32m    115[39m [30;43m        [39;49m[30;43mquota_project_id[39;49m[30;43m=[39;49m[30;43mquota_project_id[39;49m[30;43m,[39;49m
+[32m    116[39m [30;43m        [39;49m[30;43mdefault_scopes[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mAUTH_SCOPES[39;49m[30;43m,[39;49m
+[32m    117[39m [30;43m    [39;49m[30;43m)[39;49m
+[32m    118[39m     [38;5;66;03m# Don't apply audience if the credentials file passed from user.[39;00m
+[32m    119[39m     [38;5;28;01mif[39;00m [38;5;28mhasattr[39m(credentials, [33m"[39m[33mwith_gdch_audience[39m[33m"[39m):
+
+[36mFile [39m[32m/usr/share/miniconda/envs/pose-env/lib/python3.14/site-packages/google/auth/_default.py:748[39m, in [36mdefault[39m[34m(scopes, request, quota_project_id, default_scopes)[39m
+[32m    740[39m             _LOGGER.warning(
+[32m    741[39m                 [33m"[39m[33mNo project ID could be determined. Consider running [39m[33m"[39m
+[32m    742[39m                 [33m"[39m[33m`gcloud config set project` or setting the [39m[38;5;132;01m%s[39;00m[33m [39m[33m"[39m
+[32m    743[39m                 [33m"[39m[33menvironment variable[39m[33m"[39m,
+[32m    744[39m                 environment_vars.PROJECT,
+[32m    745[39m             )
+[32m    746[39m         [38;5;28;01mreturn[39;00m credentials, effective_project_id
+[32m--> [39m[32m748[39m [38;5;28;01mraise[39;00m exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+
+[31mDefaultCredentialsError[39m: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+

@@ -1,0 +1,1677 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Discourse page views &#8212; POSE Metrics Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'main';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Demographics" href="demographics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">POSE Metrics Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Discourse page views
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="demographics.html">Demographics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/main.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Discourse page views</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Discourse page views</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#discourse-signups">Discourse signups</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#star-history">Star history</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-workshops">User workshops</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#google-analytics">Google analytics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-figure">Main figure</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">morethemes</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">mt</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;urban&quot;</span><span class="p">)</span>
+
+<span class="c1"># https://coolors.co/1a4848-f7b000-f46036-c9f2c7-aceca1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;axes.prop_cycle&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cycler</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#1a4848&quot;</span><span class="p">,</span> <span class="s2">&quot;#f7b000&quot;</span><span class="p">,</span> <span class="s2">&quot;#f46036&quot;</span><span class="p">,</span> <span class="s2">&quot;#c9f2c7&quot;</span><span class="p">,</span> <span class="s2">&quot;#aceca1&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># remove top and right spines for all plots in matplotlib params</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;axes.spines.top&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;axes.spines.right&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyfonts</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_google_font</span>
+
+<span class="n">bold_font</span> <span class="o">=</span> <span class="n">load_google_font</span><span class="p">(</span><span class="s2">&quot;Urbanist&quot;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="discourse-page-views">
+<h1>Discourse page views<a class="headerlink" href="#discourse-page-views" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dotenv</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://festim.discourse.group/admin/reports/consolidated_page_views.json&quot;</span>
+<span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DISCOURSE_API_KEY&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">API_KEY</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;DISCOURSE_API_KEY environment variable is not set&quot;</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">url</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;?start_date=</span><span class="si">{</span><span class="n">start_date</span><span class="si">}</span><span class="s2">&amp;end_date=</span><span class="si">{</span><span class="n">end_date</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span> <span class="s2">&quot;Api-Key&quot;</span><span class="p">:</span> <span class="n">API_KEY</span><span class="p">,</span> <span class="s2">&quot;Api-Username&quot;</span><span class="p">:</span> <span class="s2">&quot;remidm&quot;</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="n">response_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(response_data)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">response_data</span><span class="p">[</span><span class="s2">&quot;report&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>req</th>
+      <th>label</th>
+      <th>color</th>
+      <th>data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>page_view_logged_in</td>
+      <td>Logged in users</td>
+      <td>#1EB8D1</td>
+      <td>[{'x': '2023-11-23', 'y': 41}, {'x': '2023-11-...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>page_view_anon</td>
+      <td>Anonymous users</td>
+      <td>#9BC53D</td>
+      <td>[{'x': '2023-11-23', 'y': 9}, {'x': '2023-11-2...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>page_view_crawler</td>
+      <td>Crawlers</td>
+      <td>#721D8D</td>
+      <td>[{'x': '2023-11-24', 'y': 2}, {'x': '2023-11-2...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_filtered</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+    <span class="c1"># convert to datetime</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
+    <span class="n">data_filtered</span><span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a new dataframe with Day as the index and &quot;logged in&quot;, &quot;anonymous&quot;, &quot;crawlers&quot; as columns</span>
+
+<span class="n">all_days</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span> <span class="ow">in</span> <span class="n">data_filtered</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">all_days</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+
+<span class="n">all_days</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">all_days</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">data_filtered</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="n">all_days</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span> <span class="ow">in</span> <span class="n">data_filtered</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="c1"># set index name</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Day&quot;</span>
+
+<span class="c1"># convert index to column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Day</th>
+      <th>Logged in users</th>
+      <th>Anonymous users</th>
+      <th>Crawlers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-11-23</td>
+      <td>41</td>
+      <td>9</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-11-24</td>
+      <td>15</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-11-26</td>
+      <td>1</td>
+      <td>18</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-11-27</td>
+      <td>75</td>
+      <td>25</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-11-28</td>
+      <td>92</td>
+      <td>41</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>878</th>
+      <td>2026-04-24</td>
+      <td>30</td>
+      <td>176</td>
+      <td>126</td>
+    </tr>
+    <tr>
+      <th>879</th>
+      <td>2026-04-25</td>
+      <td>NaN</td>
+      <td>68</td>
+      <td>148</td>
+    </tr>
+    <tr>
+      <th>880</th>
+      <td>2026-04-26</td>
+      <td>1</td>
+      <td>73</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>881</th>
+      <td>2026-04-27</td>
+      <td>4</td>
+      <td>223</td>
+      <td>130</td>
+    </tr>
+    <tr>
+      <th>882</th>
+      <td>2026-04-28</td>
+      <td>NaN</td>
+      <td>339</td>
+      <td>41</td>
+    </tr>
+  </tbody>
+</table>
+<p>883 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># group per month based on the &quot;Day&quot; index (sum numeric columns only)</span>
+<span class="n">discourse_page_views_monthly</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Day&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_period</span><span class="p">(</span><span class="s2">&quot;M&quot;</span><span class="p">)</span>
+<span class="p">)[[</span><span class="s2">&quot;Logged in users&quot;</span><span class="p">,</span> <span class="s2">&quot;Anonymous users&quot;</span><span class="p">,</span> <span class="s2">&quot;Crawlers&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">discourse_page_views_monthly</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Logged in users</th>
+      <th>Anonymous users</th>
+      <th>Crawlers</th>
+    </tr>
+    <tr>
+      <th>Day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2023-11</th>
+      <td>276</td>
+      <td>113</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2023-12</th>
+      <td>474</td>
+      <td>124</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>2024-01</th>
+      <td>251</td>
+      <td>70</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <th>2024-02</th>
+      <td>242</td>
+      <td>92</td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <th>2024-03</th>
+      <td>153</td>
+      <td>49</td>
+      <td>77</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_page_views</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">discourse_page_views_monthly</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">discourse_page_views_monthly</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;to_timestamp&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">discourse_page_views_monthly</span><span class="o">.</span><span class="n">index</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">x</span><span class="p">,</span>
+        <span class="n">discourse_page_views_monthly</span><span class="p">[</span><span class="s2">&quot;Logged in users&quot;</span><span class="p">],</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Logged in users&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">x</span><span class="p">,</span>
+        <span class="n">discourse_page_views_monthly</span><span class="p">[</span><span class="s2">&quot;Anonymous users&quot;</span><span class="p">],</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="n">discourse_page_views_monthly</span><span class="p">[</span><span class="s2">&quot;Logged in users&quot;</span><span class="p">],</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Anonymous users&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">x</span><span class="p">,</span>
+        <span class="n">discourse_page_views_monthly</span><span class="p">[</span><span class="s2">&quot;Crawlers&quot;</span><span class="p">],</span>
+        <span class="n">bottom</span><span class="o">=</span><span class="n">discourse_page_views_monthly</span><span class="p">[</span><span class="s2">&quot;Logged in users&quot;</span><span class="p">]</span>
+        <span class="o">+</span> <span class="n">discourse_page_views_monthly</span><span class="p">[</span><span class="s2">&quot;Anonymous users&quot;</span><span class="p">],</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Crawlers&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># plot the data - convert PeriodIndex to timestamps for plotting</span>
+<span class="n">plot_page_views</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Discourse Page Views Over Time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Views&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9c1019ae9c632e1918c8169d4c952a17d11e3fc09e0f228e9ea60e121450a274.png" src="_images/9c1019ae9c632e1918c8169d4c952a17d11e3fc09e0f228e9ea60e121450a274.png" />
+</div>
+</div>
+</section>
+<section id="discourse-signups">
+<h1>Discourse signups<a class="headerlink" href="#discourse-signups" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://festim.discourse.group/admin/reports/signups.json&quot;</span>
+<span class="n">url</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;?chart_grouping=monthly&amp;end_date=</span><span class="si">{</span><span class="n">end_date</span><span class="si">}</span><span class="s2">&amp;start_date=</span><span class="si">{</span><span class="n">start_date</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span> <span class="s2">&quot;Api-Key&quot;</span><span class="p">:</span> <span class="n">API_KEY</span><span class="p">,</span> <span class="s2">&quot;Api-Username&quot;</span><span class="p">:</span> <span class="s2">&quot;remidm&quot;</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="n">response</span>
+<span class="n">response_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">response_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;report&#39;: {&#39;type&#39;: &#39;signups&#39;,
+  &#39;title&#39;: &#39;Signups&#39;,
+  &#39;xaxis&#39;: &#39;Day&#39;,
+  &#39;yaxis&#39;: &#39;Number of signups&#39;,
+  &#39;description&#39;: &#39;New account registrations for this period.&#39;,
+  &#39;description_link&#39;: None,
+  &#39;data&#39;: [{&#39;x&#39;: &#39;2023-11-23&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2023-11-27&#39;, &#39;y&#39;: 3},
+   {&#39;x&#39;: &#39;2023-12-04&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2023-12-05&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2023-12-13&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-01-25&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-04-06&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-04-19&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-04-26&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-05-07&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-05-16&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-05-25&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-06-27&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-07-12&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-07-22&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-07-23&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-07-24&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-07-25&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-08-01&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-08-30&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-09-23&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-10-06&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-10-07&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-10-18&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-11-01&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2024-12-12&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-01-20&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-01-23&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-02-13&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-03-12&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-03-20&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-04-24&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-06-22&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-06-30&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-07-09&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-07-29&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-07-31&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-08-07&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-09-16&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-10-15&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-10-29&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-10-31&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-11-11&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2025-12-03&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2026-01-16&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2026-02-05&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2026-02-27&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2026-03-20&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2026-04-03&#39;, &#39;y&#39;: 1},
+   {&#39;x&#39;: &#39;2026-04-24&#39;, &#39;y&#39;: 1}],
+  &#39;start_date&#39;: &#39;2022-01-01T00:00:00Z&#39;,
+  &#39;end_date&#39;: &#39;2026-04-28T23:59:59Z&#39;,
+  &#39;prev_data&#39;: None,
+  &#39;prev_start_date&#39;: &#39;2017-09-05T00:00:00Z&#39;,
+  &#39;prev_end_date&#39;: &#39;2022-01-01T00:00:00Z&#39;,
+  &#39;prev30Days&#39;: 0,
+  &#39;dates_filtering&#39;: True,
+  &#39;report_key&#39;: &#39;reports:signups:20220101:20260428:[:total, :prev30Days]:4:1&#39;,
+  &#39;primary_color&#39;: &#39;rgba(81,131,155,1)&#39;,
+  &#39;secondary_color&#39;: &#39;rgba(81,131,155,0.1)&#39;,
+  &#39;available_filters&#39;: [{&#39;id&#39;: &#39;group&#39;, &#39;type&#39;: &#39;group&#39;, &#39;default&#39;: None}],
+  &#39;labels&#39;: [{&#39;type&#39;: &#39;date&#39;, &#39;property&#39;: &#39;x&#39;, &#39;title&#39;: &#39;Day&#39;},
+   {&#39;type&#39;: &#39;number&#39;, &#39;property&#39;: &#39;y&#39;, &#39;title&#39;: &#39;Count&#39;}],
+  &#39;average&#39;: False,
+  &#39;percent&#39;: False,
+  &#39;higher_is_better&#39;: True,
+  &#39;modes&#39;: [&#39;chart&#39;, &#39;table&#39;],
+  &#39;icon&#39;: &#39;user-plus&#39;,
+  &#39;total&#39;: 52}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report_data</span> <span class="o">=</span> <span class="n">response_data</span><span class="p">[</span><span class="s2">&quot;report&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+<span class="n">signups_data_x</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">report_data</span><span class="p">]</span>
+<span class="n">signups_data_y</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">report_data</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_signups</span><span class="p">(</span><span class="n">fill_between</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">cumulative_signups</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">signups_data_y</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">l</span><span class="p">,)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">signups_data_x</span><span class="p">,</span> <span class="n">cumulative_signups</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fill_between</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">signups_data_x</span><span class="p">,</span> <span class="n">cumulative_signups</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">step</span><span class="o">=</span><span class="s2">&quot;post&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">signups_data_x</span><span class="p">,</span> <span class="n">cumulative_signups</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># plot the data - convert PeriodIndex to timestamps for plotting</span>
+<span class="n">plot_signups</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Discourse Signups Over Time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Signups&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4fdbd13b01132bfcee9425ea0f9bbfca3a641c9279ed6faa14cbbe2e8b8a6f30.png" src="_images/4fdbd13b01132bfcee9425ea0f9bbfca3a641c9279ed6faa14cbbe2e8b8a6f30.png" />
+</div>
+</div>
+</section>
+<section id="star-history">
+<h1>Star history<a class="headerlink" href="#star-history" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">OWNER</span> <span class="o">=</span> <span class="s2">&quot;festim-dev&quot;</span>
+<span class="n">REPO</span> <span class="o">=</span> <span class="s2">&quot;festim&quot;</span>
+
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">OWNER</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">REPO</span><span class="si">}</span><span class="s2">/stargazers&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/vnd.github.v3.star+json&quot;</span><span class="p">,</span>
+    <span class="c1"># &quot;Authorization&quot;: f&quot;Bearer {TOKEN}&quot;,  # uncomment for higher rate limits</span>
+<span class="p">}</span>
+<span class="n">page</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">all_stars</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">OWNER</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">REPO</span><span class="si">}</span><span class="s2">/stargazers&quot;</span>
+    <span class="c1"># NOTE there seems to be a limit of 100 per page, so we need to paginate through the results</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="n">page</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="n">all_stars</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Each item now has &quot;starred_at&quot; and &quot;user&quot;</span>
+<span class="k">for</span> <span class="n">star</span> <span class="ow">in</span> <span class="n">all_stars</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">star</span><span class="p">[</span><span class="s2">&quot;starred_at&quot;</span><span class="p">],</span> <span class="n">star</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">][</span><span class="s2">&quot;login&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-12-13T20:33:01Z mougenj
+2022-07-27T12:22:30Z stephen-dixon
+2022-07-27T12:34:14Z shimwell
+2022-07-27T12:42:03Z jhillairet
+2022-07-27T13:30:40Z BilelJegham
+2022-07-27T13:44:39Z tianyikillua
+2022-07-27T18:36:04Z giovanni-mariano
+2022-08-08T22:30:23Z tkoyama010
+2022-08-12T11:52:39Z StephDlpmtn
+2022-08-12T23:59:54Z pshriwise
+2022-08-19T06:58:50Z tengfeideng
+2022-08-29T13:12:55Z ehodille
+2022-09-13T15:36:45Z MKastek
+2022-09-29T07:30:47Z liliangillier
+2022-10-23T08:21:00Z husni-zuhdi
+2022-12-13T22:51:24Z jlogan-cfs
+2022-12-14T16:29:29Z lcarasik
+2023-01-10T00:15:43Z george-poole
+2023-06-21T06:59:44Z XuesenYang
+2023-07-09T12:14:02Z FranFani
+2023-07-09T12:31:20Z DinushaJ
+2023-07-09T14:12:28Z FuerstT
+2023-07-09T15:41:32Z PXC998
+2023-07-09T15:41:38Z jehbice
+2023-07-09T15:41:46Z niamh-holland
+2023-07-09T15:41:47Z steven-van-boxel
+2023-07-09T15:41:49Z zhengs-cn
+2023-07-09T15:41:51Z AMPechero
+2023-07-09T15:41:57Z odvorak89
+2023-07-09T15:42:15Z LukeFisherUKAEA
+2023-07-09T15:42:18Z AKI-1997
+2023-07-09T15:42:45Z GazelleH
+2023-07-19T11:47:10Z jhdark
+2023-07-27T07:21:49Z Ttw0626
+2023-07-31T08:56:03Z gnikit
+2023-08-09T13:23:40Z GdelacuerdaV
+2023-09-19T13:32:58Z Allentro
+2023-09-27T15:51:43Z Oliverator
+2023-09-27T15:51:50Z paulbrrn
+2023-09-27T15:52:23Z gareth13479
+2023-09-27T15:52:58Z inoseel
+2023-09-27T15:53:51Z lcandidokf
+2023-09-27T15:55:19Z stefan-richr
+2023-09-27T15:55:21Z LukeTK1998
+2023-09-28T06:37:03Z albcir
+2023-10-05T15:08:52Z SamueleMeschini
+2023-10-06T02:03:16Z zhuzihao1998
+2023-10-30T23:02:35Z sohhae
+2023-10-31T19:47:40Z allen-adastra
+2023-11-06T10:20:41Z guangmingzhou2021
+2023-11-06T16:20:16Z akoen
+2023-11-15T17:05:27Z gabriele-ferrero
+2023-11-26T22:40:24Z tadash10
+2023-11-28T08:17:39Z ekremekc
+2023-12-06T14:54:19Z xiaochun-li
+2023-12-11T14:05:16Z dongdong0159
+2024-01-16T15:42:01Z WeaverC20
+2024-02-14T08:20:49Z KulaginVladimir
+2024-03-06T20:03:19Z kaelyndunnell
+2024-03-18T23:34:49Z rwalkerlewis
+2024-03-22T17:18:28Z r-tomlin
+2024-04-06T15:51:59Z alexjackson1
+2024-04-09T16:24:07Z namurphy
+2024-04-15T09:15:47Z SteSeg
+2024-04-18T10:17:44Z hanoodle
+2024-04-23T13:31:26Z haohaoxuexi101
+2024-04-24T14:24:41Z repositony
+2024-05-07T20:53:39Z Callebez
+2024-05-11T21:28:08Z Isabelle778
+2024-05-20T06:05:23Z zjbergstrom
+2024-05-24T21:51:25Z rmchurch
+2024-05-29T10:49:08Z chenray844
+2024-05-29T19:26:32Z rekomodo
+2024-07-02T14:57:00Z emmanuelroque
+2024-07-03T22:00:43Z ThomasFabula
+2024-07-04T16:05:45Z nickrazes
+2024-07-09T16:19:25Z jbae11
+2024-07-17T04:55:30Z RemDelaporteMathurin
+2024-07-17T07:14:47Z ymbkxc
+2024-07-23T13:34:03Z JonathanGSDUFOUR
+2024-08-07T13:51:23Z EduardoGO-UKAEA
+2024-08-07T13:52:13Z IFV-Git
+2024-08-13T11:04:54Z miklavrent
+2024-08-14T12:04:59Z Ly0n
+2024-08-14T14:10:13Z Sandalots
+2024-08-28T23:51:54Z Anisomorphism
+2024-09-13T13:55:37Z c-uiiin
+2024-09-30T07:25:47Z jon-proximafusion
+2024-10-02T07:43:39Z guillermogf
+2024-10-07T19:45:47Z JDPS
+2024-10-09T06:38:02Z YongYahn
+2024-11-25T05:04:27Z yrrepy
+2024-11-29T08:55:49Z church89
+2024-12-20T20:51:45Z DemanovAE
+2024-12-21T16:42:56Z veliki-filozof
+2025-01-30T18:54:33Z mauveferret
+2025-03-18T16:54:56Z jons-pf
+2025-03-19T18:41:04Z mvernacc
+2025-04-16T05:57:26Z queezz
+2025-05-05T16:48:01Z mfhbam
+2025-05-15T08:00:53Z crtms
+2025-06-25T07:09:52Z IHaydon
+2025-07-01T15:26:58Z YehorYudinIPP
+2025-07-03T11:55:12Z AdriaLlealS
+2025-07-31T14:45:23Z valderrama-juan
+2025-08-08T13:17:08Z griffda
+2025-09-05T13:32:54Z SIDNEYHJ
+2025-09-05T16:45:42Z hhy2022
+2025-09-08T07:38:30Z Valtro1s
+2025-10-14T16:08:16Z qyan-github
+2025-11-10T21:37:05Z gracecatharine
+2025-11-19T00:36:18Z leyi04
+2025-12-18T08:33:39Z FlorianStolz-KF
+2025-12-30T12:13:48Z AaronValverdee
+2026-02-10T06:14:30Z nolmacdonald
+2026-02-11T23:29:43Z louisbutt338
+2026-03-19T21:42:46Z HasanGhotme
+2026-04-22T03:02:22Z 1008611-blue
+2026-04-27T11:17:50Z SangtiHoki
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">cumsum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Convert &quot;starred_at&quot; to datetime and sort</span>
+<span class="n">star_dates</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">star</span><span class="p">[</span><span class="s2">&quot;starred_at&quot;</span><span class="p">],</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%SZ&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">star</span> <span class="ow">in</span> <span class="n">all_stars</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="c1"># Create a cumulative count of stars over time</span>
+<span class="n">cumulative_stars</span> <span class="o">=</span> <span class="n">cumsum</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">star_dates</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_star_history</span><span class="p">(</span><span class="n">fillbetween</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">l</span><span class="p">,)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">star_dates</span><span class="p">,</span> <span class="n">cumulative_stars</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fillbetween</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">star_dates</span><span class="p">,</span> <span class="n">cumulative_stars</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">l</span>
+
+
+<span class="n">plot_star_history</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Cumulative Stars&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 1, &#39;Cumulative Stars&#39;)
+</pre></div>
+</div>
+<img alt="_images/115efd5f06e50ae597c0ab1f2661d4537c621b0c0fe60947f1afa36e9a938bf1.png" src="_images/115efd5f06e50ae597c0ab1f2661d4537c621b0c0fe60947f1afa36e9a938bf1.png" />
+</div>
+</div>
+</section>
+<section id="user-workshops">
+<h1>User workshops<a class="headerlink" href="#user-workshops" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">workshop_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SOFE 2025&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">23</span><span class="p">),</span>
+        <span class="s2">&quot;attendees&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SOFE 2023&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+        <span class="s2">&quot;attendees&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CEA LMJ&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s2">&quot;attendees&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;UKAEA&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s2">&quot;attendees&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;IPP Garching&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+        <span class="s2">&quot;attendees&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kyoto Fusioneering&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s2">&quot;attendees&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_trained_users_over_time</span><span class="p">(</span><span class="n">workshop_data</span><span class="p">,</span> <span class="n">fill_between</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">_workshop_data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">workshop_data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+
+    <span class="n">cumulative_trained_users</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">workshop</span><span class="p">[</span><span class="s2">&quot;attendees&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">workshop</span> <span class="ow">in</span> <span class="n">_workshop_data</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">workshop_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">workshop</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">workshop</span> <span class="ow">in</span> <span class="n">_workshop_data</span><span class="p">]</span>
+
+    <span class="c1"># add today with the latest number</span>
+    <span class="n">workshop_dates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+    <span class="n">cumulative_trained_users</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">cumulative_trained_users</span><span class="p">,</span> <span class="n">cumulative_trained_users</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="p">(</span><span class="n">l</span><span class="p">,)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">workshop_dates</span><span class="p">,</span> <span class="n">cumulative_trained_users</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;post&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fill_between</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span>
+            <span class="n">workshop_dates</span><span class="p">,</span>
+            <span class="n">cumulative_trained_users</span><span class="p">,</span>
+            <span class="n">step</span><span class="o">=</span><span class="s2">&quot;post&quot;</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">workshop_dates</span><span class="p">,</span> <span class="n">cumulative_trained_users</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plot_trained_users_over_time</span><span class="p">(</span><span class="n">workshop_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Cumulative Trained Users&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f4f507281f9ab1e72dafac7ba48f4a37088f6e2bb191dd465b8f6cbbd27662c6.png" src="_images/f4f507281f9ab1e72dafac7ba48f4a37088f6e2bb191dd465b8f6cbbd27662c6.png" />
+</div>
+</div>
+</section>
+<section id="google-analytics">
+<h1>Google analytics<a class="headerlink" href="#google-analytics" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO try and use the python GA API https://medium.com/@tmmylo1021/extract-google-analytics-data-with-python-221626ed8975</span>
+
+<span class="c1"># data_ga = pandas.read_csv(&quot;View_user_engagement_and_retention_overview.csv&quot;)</span>
+
+<span class="c1"># data_ga</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_new_users_over_time_tutorials</span><span class="p">(</span><span class="n">fill_between</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">start_date_ga</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">end_date_ga</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">nth_week</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+    <span class="n">new_users</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">new_users_cumulative</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">new_users</span><span class="p">)</span>
+
+    <span class="c1"># convert nth_week to datetime for plotting</span>
+    <span class="n">nth_week_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_date_ga</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nth_week</span><span class="p">]</span>
+    <span class="p">(</span><span class="n">l</span><span class="p">,)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nth_week_dates</span><span class="p">,</span> <span class="n">new_users_cumulative</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fill_between</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span>
+            <span class="n">nth_week_dates</span><span class="p">,</span> <span class="n">new_users_cumulative</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">()</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">nth_week_dates</span><span class="p">,</span> <span class="n">new_users_cumulative</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_new_users_over_time_docs</span><span class="p">(</span><span class="n">fill_between</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">start_date_ga</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">end_date_ga</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">nth_week</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+    <span class="n">new_users</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+
+    <span class="n">new_users_cumulative</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">new_users</span><span class="p">)</span>
+
+    <span class="c1"># convert nth_week to datetime for plotting</span>
+    <span class="n">nth_week_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_date_ga</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nth_week</span><span class="p">]</span>
+    <span class="p">(</span><span class="n">l</span><span class="p">,)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nth_week_dates</span><span class="p">,</span> <span class="n">new_users_cumulative</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fill_between</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span>
+            <span class="n">nth_week_dates</span><span class="p">,</span> <span class="n">new_users_cumulative</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">()</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">nth_week_dates</span><span class="p">,</span> <span class="n">new_users_cumulative</span>
+
+
+<span class="n">plot_new_users_over_time_tutorials</span><span class="p">()</span>
+<span class="n">plot_new_users_over_time_docs</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Week&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Cumulative New Users&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;User Growth Over Time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/13c5c4638b0d09f051cd6b0c68d90ede28cbbaed21c423dfe6ddc0304070cd17.png" src="_images/13c5c4638b0d09f051cd6b0c68d90ede28cbbaed21c423dfe6ddc0304070cd17.png" />
+</div>
+</div>
+</section>
+<section id="main-figure">
+<h1>Main figure<a class="headerlink" href="#main-figure" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extrapolate_data</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">future_date</span><span class="p">):</span>
+    <span class="c1"># Fit a linear model to the existing data</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">date</span> <span class="o">-</span> <span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">days</span> <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">])</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">ys</span>
+    <span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Linear fit</span>
+    <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">coeffs</span>
+
+    <span class="c1"># Extrapolate to the future date</span>
+    <span class="n">future_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">future_date</span> <span class="o">-</span> <span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">days</span>
+    <span class="n">extrapolated_y</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">future_x</span> <span class="o">+</span> <span class="n">intercept</span>
+
+    <span class="k">return</span> <span class="n">extrapolated_y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_milestone</span><span class="p">(</span>
+    <span class="n">date</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">text_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">line_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">arrow</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">):</span>
+    <span class="k">if</span> <span class="n">text_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">text_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">line_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">line_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">date</span><span class="p">,</span> <span class="o">**</span><span class="n">line_kwargs</span><span class="p">)</span>
+    <span class="c1"># text above the line</span>
+    <span class="k">if</span> <span class="n">arrow</span><span class="p">:</span>
+        <span class="n">arrowprops</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">arrowprops</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+        <span class="n">label</span><span class="p">,</span>
+        <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">xytext</span><span class="o">=</span><span class="n">xytext</span><span class="p">,</span>
+        <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span>
+        <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span>
+        <span class="n">arrowprops</span><span class="o">=</span><span class="n">arrowprops</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">text_kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">l</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">add_period</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">text_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">line_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">text_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">text_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">line_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">line_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">**</span><span class="n">line_kwargs</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+        <span class="n">label</span><span class="p">,</span>
+        <span class="n">xy</span><span class="o">=</span><span class="p">((</span><span class="n">start</span> <span class="o">+</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">),</span>
+        <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+        <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">text_kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">add_datapoint_annotation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="n">xytext</span><span class="p">,</span>
+            <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;C0&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phase_ii_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">phase_ii_end</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2027</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+
+<span class="n">title_coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">title_colour</span> <span class="o">=</span> <span class="s2">&quot;C0&quot;</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">nrows</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+    <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">height_ratios</span><span class="o">=</span><span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">plot_star_history</span><span class="p">()</span>
+<span class="n">extrapolate_stars_nb</span> <span class="o">=</span> <span class="n">extrapolate_data</span><span class="p">(</span><span class="n">star_dates</span><span class="p">,</span> <span class="n">cumulative_stars</span><span class="p">,</span> <span class="n">phase_ii_end</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">star_dates</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">phase_ii_end</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">cumulative_stars</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">extrapolate_stars_nb</span><span class="p">],</span>
+    <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span>
+<span class="p">)</span>
+<span class="n">add_datapoint_annotation</span><span class="p">(</span>
+    <span class="n">star_dates</span><span class="p">[</span><span class="o">-</span><span class="mi">80</span><span class="p">],</span> <span class="n">cumulative_stars</span><span class="p">[</span><span class="o">-</span><span class="mi">80</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span>
+<span class="p">)</span>
+<span class="n">add_datapoint_annotation</span><span class="p">(</span>
+    <span class="n">star_dates</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cumulative_stars</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;GitHub Stars&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">title_coords</span><span class="p">,</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">title_colour</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="n">bold_font</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">workshop_dates</span><span class="p">,</span> <span class="n">cumulative_trained_users</span> <span class="o">=</span> <span class="n">plot_trained_users_over_time</span><span class="p">(</span><span class="n">workshop_data</span><span class="p">)</span>
+
+<span class="c1"># 3 workshops a year with ~25 ppls each</span>
+<span class="n">nb_workshops_per_year</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">ppl_per_workshop</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">new_workshop_dates</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">workshop_dates</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">365</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="n">nb_workshops_per_year</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="n">new_cumulative_trained_users</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">cumulative_trained_users</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">ppl_per_workshop</span>
+<span class="p">)</span>
+
+<span class="c1"># add last point</span>
+<span class="n">new_workshop_dates</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">workshop_dates</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">new_cumulative_trained_users</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+    <span class="n">new_cumulative_trained_users</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cumulative_trained_users</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span>
+    <span class="n">new_workshop_dates</span><span class="p">,</span>
+    <span class="n">new_cumulative_trained_users</span><span class="p">,</span>
+    <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]:</span>  <span class="c1"># annotate the last and the 5th last point</span>
+    <span class="n">add_datapoint_annotation</span><span class="p">(</span>
+        <span class="n">workshop_dates</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+        <span class="n">cumulative_trained_users</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">get_color</span><span class="p">(),</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;Trained Users&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">title_coords</span><span class="p">,</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">title_colour</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="n">bold_font</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;3 workshops/year </span><span class="se">\n</span><span class="s2">with ~25 attendees each&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">dates_users_tuto</span><span class="p">,</span> <span class="n">users_tuto_cumul</span> <span class="o">=</span> <span class="n">plot_new_users_over_time_tutorials</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Tutorials&quot;</span><span class="p">)</span>
+<span class="n">dates_users_docs</span><span class="p">,</span> <span class="n">users_docs_cumul</span> <span class="o">=</span> <span class="n">plot_new_users_over_time_docs</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Docs&quot;</span><span class="p">)</span>
+<span class="n">dates_signups</span><span class="p">,</span> <span class="n">signups_cumul</span> <span class="o">=</span> <span class="n">plot_signups</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Discourse signups&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;Website users&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">title_coords</span><span class="p">,</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">title_colour</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="n">bold_font</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Discourse&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">),</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C2&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Docs&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">),</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C1&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Tutorials&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">),</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">dates</span><span class="p">,</span> <span class="n">cumul</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">xytext</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">dates_signups</span><span class="p">,</span> <span class="n">signups_cumul</span><span class="p">,</span> <span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="p">(</span><span class="n">dates_users_docs</span><span class="p">,</span> <span class="n">users_docs_cumul</span><span class="p">,</span> <span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)),</span>
+    <span class="p">(</span><span class="n">dates_users_tuto</span><span class="p">,</span> <span class="n">users_tuto_cumul</span><span class="p">,</span> <span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+<span class="p">]:</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># annotate the last point</span>
+    <span class="n">add_datapoint_annotation</span><span class="p">(</span>
+            <span class="n">dates</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+            <span class="n">cumul</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="n">xytext</span><span class="p">,</span>
+        <span class="p">)</span>
+
+
+<span class="c1"># plt.legend(reverse=True)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plot_page_views</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;Discourse Page Views</span><span class="se">\n</span><span class="s2">(monthly)&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">title_coords</span><span class="p">,</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">title_colour</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="n">bold_font</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;Early days, mostly</span><span class="se">\n</span><span class="s2">logged in users!&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">),</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;Growing number </span><span class="se">\n</span><span class="s2">of anonymous views!&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C1&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;~6k views per month!&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span>
+    <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;axes fraction&quot;</span><span class="p">,</span>
+    <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">add_milestone</span><span class="p">(</span>
+    <span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+    <span class="s2">&quot;Open Source&quot;</span><span class="p">,</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">text_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;font&quot;</span><span class="p">:</span> <span class="n">bold_font</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">add_milestone</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="s2">&quot;1st PhD </span><span class="se">\n</span><span class="s2">defended&quot;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">add_milestone</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="s2">&quot;2nd PhD </span><span class="se">\n</span><span class="s2">defended&quot;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">add_milestone</span><span class="p">(</span><span class="n">workshop_dates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;First user </span><span class="se">\n</span><span class="s2">workshop&quot;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># add_milestone(ga_users_dates[0], &quot;Google \nAnalytics&quot;, xytext=(-25, -25), arrow=True)</span>
+<span class="n">add_milestone</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="s2">&quot;FESTIM </span><span class="se">\n</span><span class="s2">Web App&quot;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">add_milestone</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span> <span class="s2">&quot;First </span><span class="se">\n</span><span class="s2"> FESTIM </span><span class="se">\n</span><span class="s2"> Fellow&quot;</span><span class="p">,</span> <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">add_milestone</span><span class="p">(</span>
+    <span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;Second </span><span class="se">\n</span><span class="s2"> FESTIM </span><span class="se">\n</span><span class="s2"> Fellow&quot;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">add_milestone</span><span class="p">(</span>
+    <span class="n">datetime</span><span class="p">(</span><span class="mi">2027</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;Third </span><span class="se">\n</span><span class="s2"> FESTIM </span><span class="se">\n</span><span class="s2"> Fellow&quot;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+
+<span class="n">add_period</span><span class="p">(</span>
+    <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prepare </span><span class="se">\n</span><span class="s2">POSE </span><span class="se">\n</span><span class="s2">proposal&quot;</span><span class="p">,</span>
+    <span class="n">text_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="s2">&quot;font&quot;</span><span class="p">:</span> <span class="n">bold_font</span><span class="p">,</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">},</span>
+<span class="p">)</span>
+
+<span class="n">add_period</span><span class="p">(</span>
+    <span class="n">phase_ii_start</span><span class="p">,</span>
+    <span class="n">phase_ii_end</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;POSE Phase II&quot;</span><span class="p">,</span>
+    <span class="n">text_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="s2">&quot;font&quot;</span><span class="p">:</span> <span class="n">bold_font</span><span class="p">,</span> <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">},</span>
+<span class="p">)</span>
+
+<span class="n">add_milestone</span><span class="p">(</span>
+    <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="s2">&quot;FESTIM v2.0 </span><span class="se">\n</span><span class="s2">pre-print&quot;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">add_milestone</span><span class="p">(</span>
+    <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+    <span class="s2">&quot;2 new hires&quot;</span><span class="p">,</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">35</span><span class="p">,</span> <span class="o">+</span><span class="mi">25</span><span class="p">),</span>
+    <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">text_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;font&quot;</span><span class="p">:</span> <span class="n">bold_font</span><span class="p">},</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;timeline.svg&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1398cb2ceef5a00dae994ab378a767a182599fe531d3089333cbdd406e805b69.png" src="_images/1398cb2ceef5a00dae994ab378a767a182599fe531d3089333cbdd406e805b69.png" />
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="demographics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Demographics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Discourse page views</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#discourse-signups">Discourse signups</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#star-history">Star history</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-workshops">User workshops</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#google-analytics">Google analytics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-figure">Main figure</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By FESTIM Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
