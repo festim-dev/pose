@@ -14,7 +14,10 @@ dependencies:
   - geopandas
   - geopy
   - python-dotenv
+  - jupyter-book<2
   - pip:
     - morethemes
     - cartopy
+    - pyfonts
+    - adjustText
     - google-analytics-data

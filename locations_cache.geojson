@@ -483,6 +483,8 @@
 { "type": "Feature", "properties": { "city": "Poing", "address": "Poing, 85586, Bayern, Deutschland" }, "geometry": { "type": "Point", "coordinates": [ 11.803713, 48.1667467 ] } },
 { "type": "Feature", "properties": { "city": "Gretna", "address": "Gretna, 70053, Louisiana, United States" }, "geometry": { "type": "Point", "coordinates": [ -90.0539604, 29.9146493 ] } },
 { "type": "Feature", "properties": { "city": "Appleton", "address": "Appleton, Wisconsin, United States" }, "geometry": { "type": "Point", "coordinates": [ -88.4069744, 44.2613967 ] } },
-{ "type": "Feature", "properties": { "city": "Otaru", "address": "小樽市, 北海道, 日本" }, "geometry": { "type": "Point", "coordinates": [ 140.9946021, 43.1906806 ] } }
+{ "type": "Feature", "properties": { "city": "Otaru", "address": "小樽市, 北海道, 日本" }, "geometry": { "type": "Point", "coordinates": [ 140.9946021, 43.1906806 ] } },
+{ "type": "Feature", "properties": { "city": "Watertown", "address": "Watertown, Massachusetts, United States" }, "geometry": { "type": "Point", "coordinates": [ -71.1843234, 42.3652576 ] } },
+{ "type": "Feature", "properties": { "city": "Weiden in der Oberpfalz", "address": "Weiden in der Oberpfalz, 92637, Bayern, Deutschland" }, "geometry": { "type": "Point", "coordinates": [ 12.1631636, 49.6752749 ] } }
 ]
 }
