@@ -1,4 +1,5 @@
 format: jb-book
 root: main
 chapters:
-- file: demographics
+- file: ga_docs
+- file: ga_tutorials
