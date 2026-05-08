@@ -556,6 +556,8 @@
 { "type": "Feature", "properties": { "city": "Washington D.C.", "address": "Washington, District of Columbia, United States" }, "geometry": { "type": "Point", "coordinates": [ -77.0363849, 38.8950982 ] } },
 { "type": "Feature", "properties": { "city": "Monterotondo", "address": "Monterotondo, 00015, Lazio, Italia" }, "geometry": { "type": "Point", "coordinates": [ 12.6183967, 42.0517987 ] } },
 { "type": "Feature", "properties": { "city": "Antwerp", "address": "Antwerpen, Antwerpen, België / Belgique / Belgien" }, "geometry": { "type": "Point", "coordinates": [ 4.3997081, 51.2211097 ] } },
-{ "type": "Feature", "properties": { "city": "Apeldoorn", "address": "Apeldoorn, Gelderland, Nederland" }, "geometry": { "type": "Point", "coordinates": [ 5.9639485, 52.2156457 ] } }
+{ "type": "Feature", "properties": { "city": "Apeldoorn", "address": "Apeldoorn, Gelderland, Nederland" }, "geometry": { "type": "Point", "coordinates": [ 5.9639485, 52.2156457 ] } },
+{ "type": "Feature", "properties": { "city": "Auburndale", "address": "Auburndale, 33823, Florida, United States" }, "geometry": { "type": "Point", "coordinates": [ -81.7888642, 28.0653422 ] } },
+{ "type": "Feature", "properties": { "city": "Vinon-sur-Verdon", "address": "Vinon-sur-Verdon, 83560, Provence-Alpes-Côte d'Azur, France" }, "geometry": { "type": "Point", "coordinates": [ 5.8127618, 43.7245683 ] } }
 ]
 }
