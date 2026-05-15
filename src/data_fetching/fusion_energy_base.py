@@ -30,4 +30,22 @@ def aggregate_data(organization_generator):
     all_data = []
     for data in organization_generator:
         all_data.extend(data["results"])
-    return pd.DataFrame(all_data)
+
+    df = pd.DataFrame(all_data)
+
+    df["city_full"] = df.apply(
+        lambda row: (
+            float("nan")
+            if pd.isna(row["city"])
+            else ", ".join(
+                [
+                    str(x)
+                    for x in [row.get("city"), row.get("region"), row.get("country")]
+                    if pd.notna(x) and str(x).strip()
+                ]
+            )
+        ),
+        axis=1,
+    )
+
+    return df

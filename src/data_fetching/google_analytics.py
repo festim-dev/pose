@@ -35,6 +35,7 @@ def run_report(
     dimensions = [Dimension(name="date")] if daily else []
     dimensions += [
         Dimension(name="city"),
+        Dimension(name="region"),
         Dimension(name="country"),
     ]
 

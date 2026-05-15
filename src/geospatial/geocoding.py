@@ -11,11 +11,11 @@ def find_locations_from_cache(df, filename: str, update_cache=True):
         print(f"No cache found at {filename}, starting with an empty cache.")
         cache = gpd.GeoDataFrame(columns=["city", "geometry"], crs="EPSG:4326")
 
-    cities_found = set(df["city"]) & set(cache["city"])
+    cities_found = set(df["city_full"]) & set(cache["city"])
     locations_found = cache[cache["city"].isin(cities_found)]
 
     # for cities not found in cache, geocode and add to cache
-    locs_not_found = set(df["city"]) - set(cache["city"])
+    locs_not_found = set(df["city_full"]) - set(cache["city"])
     if locs_not_found:
         print(f"Locations not found in cache: {locs_not_found}")
         locs_new = gpd.tools.geocode(list(locs_not_found))
@@ -28,8 +28,8 @@ def find_locations_from_cache(df, filename: str, update_cache=True):
     )
 
     # ensure locations matches the order of df and avoid dtype mismatch errors
-    merge_df = df[["city"]].copy()
-    merge_df["city"] = merge_df["city"].astype(str)
+    merge_df = df[["city_full"]].copy()
+    merge_df["city"] = merge_df["city_full"].astype(str)
     locations["city"] = locations["city"].astype(str)
     locations = merge_df.merge(locations, on="city", how="left")
     locations = gpd.GeoDataFrame(locations, geometry="geometry")
