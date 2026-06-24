@@ -4,7 +4,7 @@ channels:
   - defaults
 dependencies:
   - python
-  - matplotlib
+  - matplotlib<3.11  # can remove pin when https://github.com/y-sunflower/morethemes/issues/38 is fixed
   - numpy
   - pandas
   - ipykernel
