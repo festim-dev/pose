@@ -1,6 +1,37 @@
 import os
+import warnings
+
 import geopandas as gpd
 import pandas as pd
+from geopy.extra.rate_limiter import RateLimiter
+from geopy.geocoders import Photon
+from shapely.geometry import Point
+
+_geolocator = Photon(user_agent="festim-pose-metrics", timeout=10)
+_geocode = RateLimiter(
+    _geolocator.geocode, min_delay_seconds=1, max_retries=2, swallow_exceptions=True
+)
+
+
+def _geocode_cities(cities):
+    """Geocode cities one at a time, never hanging and never raising.
+
+    Cities that cannot be resolved get an empty geometry and a warning, so a
+    flaky geocoding service degrades the map instead of breaking the build.
+    """
+    geometries, failed = [], []
+    for city in cities:
+        loc = _geocode(city)
+        if loc is None:
+            failed.append(city)
+            geometries.append(None)
+        else:
+            geometries.append(Point(loc.longitude, loc.latitude))
+    if failed:
+        warnings.warn(f"Could not geocode {len(failed)} location(s): {sorted(failed)}")
+    return gpd.GeoDataFrame(
+        {"city": list(cities)}, geometry=geometries, crs="EPSG:4326"
+    )
 
 
 def find_locations_from_cache(df, filename: str, update_cache=True):
@@ -18,8 +49,7 @@ def find_locations_from_cache(df, filename: str, update_cache=True):
     locs_not_found = set(df["city_full"]) - set(cache["city"])
     if locs_not_found:
         print(f"Locations not found in cache: {locs_not_found}")
-        locs_new = gpd.tools.geocode(list(locs_not_found))
-        locs_new["city"] = list(locs_not_found)
+        locs_new = _geocode_cities(sorted(locs_not_found))
 
     locations = (
         pd.concat([locations_found, locs_new], ignore_index=True)
@@ -36,8 +66,10 @@ def find_locations_from_cache(df, filename: str, update_cache=True):
 
     if update_cache and locs_not_found:
         # make sure to keep the same order as the original df
+        # only cache successful lookups, so failures are retried next time
         cache["city"] = cache["city"].astype(str)
-        locs_new["city"] = locs_new["city"].astype(str)
-        cache = pd.concat([cache, locs_new], ignore_index=True)
+        resolved = locs_new[~locs_new.geometry.isna()].copy()
+        resolved["city"] = resolved["city"].astype(str)
+        cache = pd.concat([cache, resolved], ignore_index=True)
         cache.to_file(filename, driver="GeoJSON")
     return locations

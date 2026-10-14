@@ -3,4 +3,7 @@ author: FESTIM Community
 logo: ""
 execute:
   execute_notebooks: force
+  # geocoding new cities and fetching GA data can take minutes; the default
+  # 30 s per-cell timeout raised KeyboardInterrupt mid-build
+  timeout: 1800
   allow_errors: false
