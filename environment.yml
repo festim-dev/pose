@@ -4,7 +4,7 @@ channels:
   - defaults
 dependencies:
   - python
-  - matplotlib<3.11  # can remove pin when https://github.com/y-sunflower/morethemes/issues/38 is fixed
+  - matplotlib>=3.11  # morethemes>=0.8 imports matplotlib.typing.RcKeyType, added in 3.11
   - numpy
   - pandas
   - ipykernel
