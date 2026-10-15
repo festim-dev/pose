@@ -878,6 +878,7 @@
 {"type":"Feature","properties":{"city":"Yekaterinburg, Sverdlovsk Oblast, Russia","address":null},"geometry":{"type":"Point","coordinates":[60.6007886,56.8382071]}},
 {"type":"Feature","properties":{"city":"Yichang, Hubei, China","address":null},"geometry":{"type":"Point","coordinates":[111.2803512,30.6941332]}},
 {"type":"Feature","properties":{"city":"Zhongzheng District, Taipei City, Taiwan","address":null},"geometry":{"type":"Point","coordinates":[121.5112127,25.0368635]}},
-{"type":"Feature","properties":{"city":"Zug, Zug, Switzerland","address":null},"geometry":{"type":"Point","coordinates":[8.5173652,47.1679898]}}
+{"type":"Feature","properties":{"city":"Zug, Zug, Switzerland","address":null},"geometry":{"type":"Point","coordinates":[8.5173652,47.1679898]}},
+{"type":"Feature","properties":{"city":"Ile-de-France, France","address":null},"geometry":{"type":"Point","coordinates":[2.7537863,48.6443057]}}
 ]
 }
